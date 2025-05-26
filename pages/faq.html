@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ - Séduction Facile</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    body.bg-faq {
+      background: linear-gradient(135deg, #fceabb 0%, #f8b500 100%);
+      background-attachment: fixed;
+      color: #333;
+    }
+    main.content {
+      max-width: 700px;
+      margin: auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    h1.title {
+      text-align: center;
+      color: #b26900;
+      margin-bottom: 0.5em;
+    }
+    .accordion-item {
+      border-bottom: 1px solid #ddd;
+    }
+    .accordion-header {
+      background: #f8b500;
+      color: white;
+      cursor: pointer;
+      padding: 1rem 1.5rem;
+      font-weight: 600;
+      user-select: none;
+      transition: background-color 0.3s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .accordion-header:hover {
+      background: #d99800;
+    }
+    .accordion-header::after {
+      content: "+";
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    .accordion-header.active::after {
+      content: "−";
+      transform: rotate(180deg);
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+      padding: 0 1.5rem;
+      background: #fff5cc;
+      color: #444;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .accordion-content.open {
+      padding: 1rem 1.5rem;
+      max-height: 500px; /* assez grand pour le contenu */
+    }
+    a.btn-back {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #b26900;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    a.btn-back:hover {
+      color: #7c4e00;
+    }
+
+
+    
+
+
+  /* Bouton toggle dark mode */
+.dark-toggle-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #444;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    transition: color 0.3s;
+  }
+  .dark-toggle-btn:hover {
+    color: #222;
+  }
+  
+  /* Mode sombre général */
+  body.dark-mode {
+    background-color: #121212;
+    color: #ddd;
+  }
+  
+  body.dark-mode header,
+  body.dark-mode footer {
+    background-color: #1f1f1f;
+    color: #ddd;
+    box-shadow: none;
+  }
+  
+  body.dark-mode a,
+  body.dark-mode a:hover {
+    color: #80cbc4;
+  }
+  
+  body.dark-mode .card {
+    background-color: #242424;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.8);
+    color: #ddd;
+  }
+  
+  body.dark-mode .card h2,
+  body.dark-mode .card p {
+    color: #ccc;
+  }
+  
+  /* Accordéon FAQ en mode sombre */
+  body.dark-mode .accordion-header {
+    background: #333;
+    color: #eee;
+  }
+  
+  body.dark-mode .accordion-header:hover {
+    background: #555;
+  }
+  
+  body.dark-mode .accordion-content {
+    background: #222;
+    color: #ccc;
+  }
+  
+  /* Si tu veux appliquer dark mode aux pages internes, vérifie aussi le body */
+  
+
+
+
+
+
+  </style>
+</head>
+<body class="bg-faq">
+
+  <header>
+    <h1 class="title">Foire Aux Questions (FAQ)</h1>
+  </header>
+
+  <main class="content">
+    <a href="../index.html" class="btn-back">← Retour à l'accueil</a>
+
+    <div class="accordion-item">
+      <div class="accordion-header">Comment aborder une fille sans stress ?</div>
+      <div class="accordion-content">
+        Respire profondément, souris, et sois toi-même. L’authenticité rassure plus que les phrases préparées.
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">Que faire si je suis trop timide ?</div>
+      <div class="accordion-content">
+        Commence par de petits pas : un sourire, un bonjour. La confiance se construit doucement, pas besoin de précipiter.
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">Comment relancer une conversation qui s’essouffle ?</div>
+      <div class="accordion-content">
+        Pose une question ouverte, parle de ses passions ou d’un sujet léger qui peut créer de la complicité.
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">Comment gérer un refus sans perdre confiance ?</div>
+      <div class="accordion-content">
+        Respecte sa réponse, remercie-la, et rappelle-toi que c’est une opportunité d’apprendre et de progresser.
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">Le langage corporel est-il vraiment important ?</div>
+      <div class="accordion-content">
+        Oui, il parle souvent plus que les mots : posture ouverte, contact visuel et sourire sont essentiels.
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Séduction Facile</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const currentlyActive = document.querySelector('.accordion-header.active');
+        if(currentlyActive && currentlyActive !== header){
+          currentlyActive.classList.remove('active');
+          currentlyActive.nextElementSibling.classList.remove('open');
+        }
+        header.classList.toggle('active');
+        header.nextElementSibling.classList.toggle('open');
+      });
+    });
+
+
+
+
+    
+const toggleBtn = document.getElementById('darkModeToggle');
+const body = document.body;
+
+// Charger la préférence enregistrée (localStorage)
+if (localStorage.getItem('darkMode') === 'enabled') {
+  body.classList.add('dark-mode');
+  toggleBtn.textContent = '☀️'; // changer icône lune → soleil
+}
+
+toggleBtn.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+  const isDark = body.classList.contains('dark-mode');
+  toggleBtn.textContent = isDark ? '☀️' : '🌙';
+
+  // Sauvegarder la préférence
+  if (isDark) {
+    localStorage.setItem('darkMode', 'enabled');
+  } else {
+    localStorage.setItem('darkMode', 'disabled');
+  }
+});
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Test de Séducteur - Séduction Facile</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    body.bg-test {
+      background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+      background-attachment: fixed;
+      color: #222;
+    }
+    main.content {
+      max-width: 700px;
+      margin: auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    h1.title {
+      text-align: center;
+      color: #1a237e;
+      margin-bottom: 0.3em;
+    }
+    h2.subtitle {
+      text-align: center;
+      color: #3949ab;
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+    .question {
+      margin-bottom: 1.8rem;
+    }
+    .question p {
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+    }
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+    button.btn-submit {
+      background-color: #3949ab;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: block;
+      margin: 2rem auto 1rem;
+    }
+    button.btn-submit:hover {
+      background-color: #1a237e;
+    }
+    .result {
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      color: #1a237e;
+      min-height: 80px;
+    }
+    .btn-back {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: #3949ab;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    .btn-back:hover {
+      color: #1a237e;
+
+
+
+      
+
+
+  /* Bouton toggle dark mode */
+.dark-toggle-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #444;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    transition: color 0.3s;
+  }
+  .dark-toggle-btn:hover {
+    color: #222;
+  }
+  
+  /* Mode sombre général */
+  body.dark-mode {
+    background-color: #121212;
+    color: #ddd;
+  }
+  
+  body.dark-mode header,
+  body.dark-mode footer {
+    background-color: #1f1f1f;
+    color: #ddd;
+    box-shadow: none;
+  }
+  
+  body.dark-mode a,
+  body.dark-mode a:hover {
+    color: #80cbc4;
+  }
+  
+  body.dark-mode .card {
+    background-color: #242424;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.8);
+    color: #ddd;
+  }
+  
+  body.dark-mode .card h2,
+  body.dark-mode .card p {
+    color: #ccc;
+  }
+  
+  /* Accordéon FAQ en mode sombre */
+  body.dark-mode .accordion-header {
+    background: #333;
+    color: #eee;
+  }
+  
+  body.dark-mode .accordion-header:hover {
+    background: #555;
+  }
+  
+  body.dark-mode .accordion-content {
+    background: #222;
+    color: #ccc;
+  }
+  
+  /* Si tu veux appliquer dark mode aux pages internes, vérifie aussi le body */
+  
+
+
+
+
+
+    }
+  </style>
+</head>
+<body class="bg-test">
+
+  <header>
+    <h1 class="title">Test de Séducteur</h1>
+    <h2 class="subtitle">Découvre ton style de séduction</h2>
+  </header>
+
+  <main class="content">
+    <a href="../index.html" class="btn-back">← Retour à l'accueil</a>
+
+    <form id="test-form">
+      <div class="question">
+        <p>1. Quand tu rencontres quelqu’un qui te plaît, tu :</p>
+        <label><input type="radio" name="q1" value="joueur" /> Flirte avec humour et légèreté</label>
+        <label><input type="radio" name="q1" value="romantique" /> Cherche un moment doux et intime</label>
+        <label><input type="radio" name="q1" value="timide" /> Es un peu réservé mais curieux</label>
+      </div>
+
+      <div class="question">
+        <p>2. Pour aborder, tu préfères :</p>
+        <label><input type="radio" name="q2" value="romantique" /> Compliment sincère</label>
+        <label><input type="radio" name="q2" value="joueur" /> Une blague ou phrase marrante</label>
+        <label><input type="radio" name="q2" value="timide" /> Un simple "bonjour", sans pression</label>
+      </div>
+
+      <div class="question">
+        <p>3. Ton langage corporel est plutôt :</p>
+        <label><input type="radio" name="q3" value="romantique" /> Ouvert, doux et à l’écoute</label>
+        <label><input type="radio" name="q3" value="joueur" /> Dynamique, expressif et souriant</label>
+        <label><input type="radio" name="q3" value="timide" /> Discret, évitant parfois le regard</label>
+      </div>
+
+      <div class="question">
+        <p>4. En cas de refus, tu :</p>
+        <label><input type="radio" name="q4" value="timide" /> Es un peu déçu mais respectueux</label>
+        <label><input type="radio" name="q4" value="romantique" /> Garde une attitude positive et calme</label>
+        <label><input type="radio" name="q4" value="joueur" /> Prends ça à la rigolade et passes à autre chose</label>
+      </div>
+
+      <div class="question">
+        <p>5. Ce qui te plaît le plus chez l’autre, c’est :</p>
+        <label><input type="radio" name="q5" value="romantique" /> La connexion émotionnelle</label>
+        <label><input type="radio" name="q5" value="joueur" /> Le sens de l’humour et la complicité</label>
+        <label><input type="radio" name="q5" value="timide" /> La douceur et la gentillesse</label>
+      </div>
+
+      <button type="submit" class="btn-submit">Voir mon résultat</button>
+    </form>
+
+    <div id="result" class="result"></div>
+  </main>
+
+  <footer>
+    <p>© 2025 Séduction Facile</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('test-form');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Collect answers
+      const formData = new FormData(form);
+      let scores = { joueur: 0, romantique: 0, timide: 0 };
+
+      for (let pair of formData.entries()) {
+        const val = pair[1];
+        if (scores[val] !== undefined) {
+          scores[val]++;
+        }
+      }
+
+      // Determine highest score
+      const maxScore = Math.max(...Object.values(scores));
+      const winners = Object.keys(scores).filter(key => scores[key] === maxScore);
+
+      // Message selon profil (si égalité on affiche le premier)
+      const profil = winners[0];
+      let message = '';
+
+      switch (profil) {
+        case 'joueur':
+          message = "Ton style est **Joueur** : tu abordes avec humour et légèreté, et tu sais mettre une ambiance détendue.";
+          break;
+        case 'romantique':
+          message = "Ton style est **Romantique** : tu recherches la connexion émotionnelle et tu sais créer une atmosphère douce.";
+          break;
+        case 'timide':
+          message = "Ton style est **Timide** : tu es réservé mais sincère, et tu avances à ton rythme avec douceur.";
+          break;
+      }
+
+      resultDiv.innerHTML = message.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      // Scroll to result
+      resultDiv.scrollIntoView({ behavior: 'smooth' });
+    });
+
+
+
+
+
+    const toggleBtn = document.getElementById('darkModeToggle');
+const body = document.body;
+
+// Charger la préférence enregistrée (localStorage)
+if (localStorage.getItem('darkMode') === 'enabled') {
+  body.classList.add('dark-mode');
+  toggleBtn.textContent = '☀️'; // changer icône lune → soleil
+}
+
+toggleBtn.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+  const isDark = body.classList.contains('dark-mode');
+  toggleBtn.textContent = isDark ? '☀️' : '🌙';
+
+  // Sauvegarder la préférence
+  if (isDark) {
+    localStorage.setItem('darkMode', 'enabled');
+  } else {
+    localStorage.setItem('darkMode', 'disabled');
+  }
+});
+
+
+
+
+
+
+
+  </script>
+
+</body>
+</html>

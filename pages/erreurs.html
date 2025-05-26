@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Erreurs à éviter - Séduction Facile</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="bg-erreurs">
+
+  <header>
+    <h1 class="title">Erreurs à éviter</h1>
+    <p class="subtitle">Les pièges classiques à éviter quand tu séduis</p>
+  </header>
+
+  <main class="content">
+    <a href="../index.html" class="btn-back">← Retour à l'accueil</a>
+
+    <section>
+      <h2>❌ Top 5 des erreurs fréquentes</h2>
+      <ul>
+        <li>Être trop insistant ou pressant</li>
+        <li>Manquer de respect ou faire des remarques déplacées</li>
+        <li>Ne pas écouter et parler uniquement de soi</li>
+        <li>Se dévaloriser ou chercher trop à plaire</li>
+        <li>Forcer la séduction au lieu d’être naturel</li>
+      </ul>
+    </section>
+
+    <section class="quiz">
+      <h2>🎯 Mini quiz : Vrai ou faux ?</h2>
+      <form id="quiz-form">
+        <div class="quiz-item">
+          <p style="color: black;">1. Il faut complimenter une fille toutes les 2 minutes pour lui montrer qu'on l’aime bien.</p>
+          <label style="color: black;"><input type="radio" name="q1" value="faux" /> Faux</label>
+          <label style="color: black;"><input type="radio" name="q1" value="vrai" /> Vrai</label>
+        </div>
+
+        <div class="quiz-item">
+          <p style="color: black;">2. Être soi-même est souvent plus efficace que jouer un rôle.</p>
+          <label style="color: rgb(0, 0, 0);"><input type="radio" name="q2" value="vrai" /> Vrai</label>
+          <label style="color: black;"><input type="radio" name="q2" value="faux" /> Faux</label>
+        </div>
+
+        <button type="submit" class="btn">Valider mes réponses</button>
+        <p id="quiz-result" class="result"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Séduction Facile</p>
+  </footer>
+
+  <script>
+    document.getElementById("quiz-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const q1 = document.querySelector('input[name="q1"]:checked')?.value;
+      const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+      const result = document.getElementById("quiz-result");
+
+      if (!q1 || !q2) {
+        result.textContent = "❗ Merci de répondre à toutes les questions.";
+        result.style.color = "red";
+        return;
+      }
+
+      if (q1 === "faux" && q2 === "vrai") {
+        result.textContent = "✅ Bravo ! Tu as bien compris les bases.";
+        result.style.color = "green";
+      } else {
+        result.textContent = "❌ Réessaye ! Relis les erreurs ci-dessus.";
+        result.style.color = "red";
+      }
+    });
+  </script>
+  
+  <script src="../app.js"></script>
+</body>
+</html>
