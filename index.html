@@ -29,11 +29,13 @@
   </style>
 <header>
   <h1 class="title">Séduction Facile</h1>
+  
   <p class="subtitle">Conseils & astuces pour séduire avec confiance</p>
 
   <!-- Bouton dark mode -->
   <button id="darkModeToggle" aria-label="Activer mode sombre" class="dark-toggle-btn">🌙</button>
-
+<br>
+<br>
   <!-- Bouton installer PWA -->
   <button id="installBtn" style="display:none;" class="dark-toggle-btn">⬇️ Installer l'app</button>
 </header>
@@ -101,30 +103,37 @@
 
 <!-- Service Worker et PWA Install -->
 <script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js')
-    .then(() => console.log('Service Worker enregistré avec succès'))
-    .catch((err) => console.log('Erreur Service Worker:', err));
-}
 
-let deferredPrompt;
-const installBtn = document.getElementById('installBtn');
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault(); // empêche la popup automatique
-  deferredPrompt = e;
-  installBtn.style.display = 'inline-block';
-});
-
-installBtn.addEventListener('click', async () => {
-  if (deferredPrompt) {
-    deferredPrompt.prompt(); 
-    const { outcome } = await deferredPrompt.userChoice;
-    console.log('Install outcome:', outcome);
-    installBtn.style.display = 'none';
-    deferredPrompt = null;
+ // Service Worker
+ if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(() => console.log('SW enregistré'))
+      .catch(err => console.log('Erreur SW:', err));
   }
-});
+
+  // PWA Install
+  let deferredPrompt;
+  const installBtn = document.getElementById('installBtn');
+  installBtn.style.display = 'none'; // caché par défaut
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installBtn.style.display = 'inline-block';
+  });
+
+  installBtn.addEventListener('click', async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      console.log('Install outcome:', outcome);
+      installBtn.style.display = 'none';
+      deferredPrompt = null;
+    }
+  });
+
+  // Optionnel : toujours afficher pour tester
+  installBtn.style.display = 'inline-block';
 </script>
 
 </body>

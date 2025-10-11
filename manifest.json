@@ -2,7 +2,7 @@
     "name": "Séduction Facile",
     "short_name": "Séduction",
     "description": "Conseils et astuces pour séduire avec confiance",
-    "start_url": "./index.html",
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#3949ab",
