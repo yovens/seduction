@@ -7,136 +7,119 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#3949ab">
+  <style>
+    /* HEADER */
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .header-buttons {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+
+    #darkModeToggle,
+    #installBtn {
+      background-color: #3949ab;
+      color: #fff;
+      border: none;
+      padding: 0.35rem 0.7rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      font-size: 0.95rem;
+    }
+
+    #darkModeToggle:hover,
+    #installBtn:hover {
+      background-color: #2c3e99;
+    }
+
+    /* Dark mode body */
+    body.dark-mode {
+      background-color: #121212;
+      color: #fff;
+    }
+
+
+
+      #installBtn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.85rem;
+      }
+
+  </style>
 </head>
 <body class="bg-home">
-<style>
-  
-  #installBtn {
-    background-color: #3949ab;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-left: 1rem;
-    transition: background-color 0.3s;
-  }
-  #installBtn:hover {
-    background-color: #2c3e99;
-  }
-  
-  </style>
+
 <header>
   <h1 class="title">Séduction Facile</h1>
   <p class="subtitle">Conseils & astuces pour séduire avec confiance</p>
 
-  <!-- Conteneur des boutons -->
   <div class="header-buttons">
-    <!-- Dark mode -->
-    <button id="darkModeToggle" aria-label="Activer mode sombre">🌙</button>
-
-    <!-- Installer l'app -->
+    <button id="darkModeToggle" aria-label="Activer mode sombre">🌙 Dark Mode</button>
     <button id="installBtn" style="display:none;">⬇️ Installer l'app</button>
   </div>
 </header>
-<style>
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    text-align: center;
-    padding: 1rem;
-  }
-  
-  /* Conteneur des boutons pour les aligner */
-  .header-buttons {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 0.5rem;
-  }
-  
-  #darkModeToggle,
-  #installBtn {
-    background-color: #3949ab;
-    color: #fff;
-    border: none;
-    padding: 0.4rem 0.8rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    font-size: 1rem;
-  }
-  
-  #darkModeToggle:hover,
-  #installBtn:hover {
-    background-color: #2c3e99;
-  }
-  
-  /* Responsive pour petits écrans */
-  @media (max-width: 480px) {
-    #darkModeToggle,
-    #installBtn {
-      padding: 0.3rem 0.6rem;
-      font-size: 0.9rem;
-    }
-  }
-  </style>
-  
 
 <main>
   <section class="card-container">
-    <a href="pages/aborder.html" class="card animate-fade">
-      <img src="img/istockphoto-652380210-612x612.jpg" alt="Comment l'aborder" />
+    <a href="pages/aborder.html" class="card">
+      <img src="img/istockphoto-652380210-612x612.jpg" alt="Comment l'aborder">
       <h2>Comment l'aborder</h2>
       <p>Astuces pour aborder naturellement</p>
     </a>
-    <a href="pages/conversation.html" class="card animate-fade delay-1">
-      <img src="img/istockphoto-1251100905-612x612.jpg" alt="Conversation" />
+    <a href="pages/conversation.html" class="card">
+      <img src="img/istockphoto-1251100905-612x612.jpg" alt="Conversation">
       <h2>Conversation</h2>
       <p>Sujets intéressants et relance</p>
     </a>
-    <a href="pages/confiance.html" class="card animate-fade delay-2">
-      <img src="img/istockphoto-2209116408-612x612.jpg" alt="Confiance" />
+    <a href="pages/confiance.html" class="card">
+      <img src="img/istockphoto-2209116408-612x612.jpg" alt="Confiance">
       <h2>Confiance en soi</h2>
       <p>Booster sa confiance et posture</p>
     </a>
-    <a href="pages/erreurs.html" class="card animate-fade delay-3">
-      <img src="img/istockphoto-2166740858-612x612.jpg" alt="Erreurs à éviter" />
+    <a href="pages/erreurs.html" class="card">
+      <img src="img/istockphoto-2166740858-612x612.jpg" alt="Erreurs">
       <h2>Erreurs à éviter</h2>
       <p>Les pièges fréquents en séduction</p>
     </a>
-    <a href="pages/sortir.html" class="card animate-fade delay-4">
-      <img src="img/istockphoto-1491416603-612x612.jpg" alt="Sortir ensemble" />
+    <a href="pages/sortir.html" class="card">
+      <img src="img/istockphoto-1491416603-612x612.jpg" alt="Sortir ensemble">
       <h2>Sortir ensemble</h2>
       <p>Quand et comment proposer un rendez-vous</p>
     </a>
-    <a href="pages/look.html" class="card animate-fade delay-5">
-      <img src="img/istockphoto-1328042999-612x612.jpg" alt="Le look" />
+    <a href="pages/look.html" class="card">
+      <img src="img/istockphoto-1328042999-612x612.jpg" alt="Look">
       <h2>Le look</h2>
       <p>Tenue, style et première impression</p>
     </a>
-    <a href="pages/langage-corporel.html" class="card animate-fade delay-6">
-      <img src="img/istockphoto-839331408-612x612.jpg" alt="Langage corporel" />
+    <a href="pages/langage-corporel.html" class="card">
+      <img src="img/istockphoto-839331408-612x612.jpg" alt="Langage corporel">
       <h2>Langage corporel</h2>
       <p>Posture, gestes et signaux non-verbaux</p>
     </a>
-    <a href="pages/psychologie.html" class="card animate-fade delay-7">
-      <img src="img/istockphoto-665593608-612x612.jpg" alt="Psychologie" />
+    <a href="pages/psychologie.html" class="card">
+      <img src="img/istockphoto-665593608-612x612.jpg" alt="Psychologie">
       <h2>Psychologie</h2>
       <p>Comprendre ses émotions et les siennes</p>
     </a>
-    <a href="pages/test.html" class="card animate-fade delay-3">
-      <img src="img/istockphoto-1249500075-612x612.jpg" alt="Test de Séducteur" />
+    <a href="pages/test.html" class="card">
+      <img src="img/istockphoto-1249500075-612x612.jpg" alt="Test">
       <h2>Test de Séducteur</h2>
       <p>Découvre ton style de séduction</p>
     </a>
-    <a href="pages/faq.html" class="card animate-fade delay-4">
-      <img src="img/istockphoto-518312983-612x612.jpg" alt="FAQ" />
+    <a href="pages/faq.html" class="card">
+      <img src="img/istockphoto-518312983-612x612.jpg" alt="FAQ">
       <h2>FAQ</h2>
       <p>Questions fréquentes sur la séduction</p>
     </a>
@@ -147,13 +130,15 @@
   <p>© 2025 Séduction Facile - Tous droits réservés</p>
 </footer>
 
-<script src="app.js"></script>
-
-<!-- Service Worker et PWA Install -->
 <script>
+  // Dark Mode
+  const darkToggle = document.getElementById('darkModeToggle');
+  darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
 
- // Service Worker
- if ('serviceWorker' in navigator) {
+  // Service Worker
+  if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js')
       .then(() => console.log('SW enregistré'))
       .catch(err => console.log('Erreur SW:', err));
@@ -162,7 +147,7 @@
   // PWA Install
   let deferredPrompt;
   const installBtn = document.getElementById('installBtn');
-  installBtn.style.display = 'none'; // caché par défaut
+  installBtn.style.display = 'none';
 
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
@@ -179,10 +164,6 @@
       deferredPrompt = null;
     }
   });
-
-  // Optionnel : toujours afficher pour tester
-  installBtn.style.display = 'inline-block';
 </script>
-
 </body>
 </html>

@@ -1,40 +1,43 @@
 const CACHE_NAME = 'seduction-cache-v1';
 const urlsToCache = [
+  '/',
   '/index.html',
   '/style.css',
   '/app.js',
-  '/pages/aborder.html',
-  '/pages/conversation.html',
-  '/pages/confiance.html',
-  '/pages/look.html',
-  '/pages/sortir.html',
-  '/pages/erreurs.html',
-  '/pages/langage-corporel.html',
-  '/pages/psychologie.html',
-  '/pages/test.html',
-  '/pages/faq.html',
-  '/images/rencontre.svg',
-  '/images/conversation.svg',
-  '/images/confiance.svg',
-  '/images/look.svg',
-  '/images/sortir.svg',
-  '/images/erreurs.svg',
-  '/images/langage.svg',
-  '/images/psychologie.svg',
-  '/images/test.svg',
-  '/images/faq.svg',
-  '/images/icon-192.png',
-  '/images/icon-512.png'
+  '/manifest.json',
+  '/img/istockphoto-652380210-612x612.jpg',
+  '/img/istockphoto-1251100905-612x612.jpg',
+  '/img/istockphoto-2209116408-612x612.jpg',
+  '/img/istockphoto-2166740858-612x612.jpg',
+  '/img/istockphoto-1491416603-612x612.jpg',
+  '/img/istockphoto-1328042999-612x612.jpg',
+  '/img/istockphoto-839331408-612x612.jpg',
+  '/img/istockphoto-665593608-612x612.jpg',
+  '/img/istockphoto-1249500075-612x612.jpg',
+  '/img/istockphoto-518312983-612x612.jpg'
 ];
 
+// Installation
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache))
   );
 });
 
+// Activation
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) => Promise.all(
+      keys.map((key) => {
+        if (key !== CACHE_NAME) return caches.delete(key);
+      })
+    ))
+  );
+});
+
+// Fetch
 self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request).then(resp => resp || fetch(event.request))
+    caches.match(event.request).then((resp) => resp || fetch(event.request))
   );
 });
