@@ -5,9 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Séduction Facile - Accueil</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#3949ab">
+
 </head>
 <body class="bg-home">
-
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js')
+        .then(() => console.log('Service Worker enregistré avec succès'))
+        .catch((err) => console.log('Erreur Service Worker:', err));
+    }
+  </script>
+  
     <header>
         <h1 class="title">Séduction Facile</h1>
         <p class="subtitle">Conseils & astuces pour séduire avec confiance</p>
