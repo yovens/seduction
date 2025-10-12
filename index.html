@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Séduction Facile - Accueil</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="manifest.webmanifest">
+
   <meta name="theme-color" content="#3949ab">
   <style>
     /* HEADER */
@@ -59,15 +60,16 @@
 
   </style>
 </head>
+
+</head>
 <body class="bg-home">
 
 <header>
   <h1 class="title">Séduction Facile</h1>
   <p class="subtitle">Conseils & astuces pour séduire avec confiance</p>
-
   <div class="header-buttons">
-    <button id="darkModeToggle" aria-label="Activer mode sombre">🌙 Dark Mode</button>
-    <button id="installBtn" style="display:none;">⬇️ Installer l'app</button>
+    <button id="darkModeToggle">🌙 Dark Mode</button>
+    <button class="icon-btn" id="installBtn" title="Installer">⬇️ Installer l'app</button>
   </div>
 </header>
 
@@ -129,41 +131,13 @@
 <footer>
   <p>© 2025 Séduction Facile - Tous droits réservés</p>
 </footer>
-
 <script>
   // Dark Mode
-  const darkToggle = document.getElementById('darkModeToggle');
-  darkToggle.addEventListener('click', () => {
+  document.getElementById('darkModeToggle').addEventListener('click',()=>{
     document.body.classList.toggle('dark-mode');
   });
 
-  // Service Worker
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js')
-      .then(() => console.log('SW enregistré'))
-      .catch(err => console.log('Erreur SW:', err));
-  }
+  </script>
 
-  // PWA Install
-  let deferredPrompt;
-  const installBtn = document.getElementById('installBtn');
-  installBtn.style.display = 'none';
-
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    installBtn.style.display = 'inline-block';
-  });
-
-  installBtn.addEventListener('click', async () => {
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      const { outcome } = await deferredPrompt.userChoice;
-      console.log('Install outcome:', outcome);
-      installBtn.style.display = 'none';
-      deferredPrompt = null;
-    }
-  });
-</script>
 </body>
 </html>
