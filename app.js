@@ -25,3 +25,10 @@ toggleBtn.addEventListener('click', () => {
     localStorage.setItem('darkMode', 'disabled');
   }
 });
+
+
+if('serviceWorker' in navigator){
+  window.addEventListener('load', ()=> {
+    navigator.serviceWorker.register('./service-worker.js').catch(()=>{/* ignore */});
+  });
+}
