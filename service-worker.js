@@ -2,9 +2,9 @@
 const CACHE = 'seduction-cache-v1';
 const APP_SHELL = [
   '/',
-  '/index.html',
-  '/style.css',
-  '/app.js',
+  'index.html',
+  'style.css',
+  'app.js',
   '/manifest.json',
   '/img/istockphoto-652380210-612x612.jpg',
   '/img/istockphoto-1251100905-612x612.jpg',

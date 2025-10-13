@@ -1,7 +1,7 @@
 {
   "name": "Séduction Facile",
   "short_name": "Séduction",
-  "start_url": "/index.html",
+  "start_url": " index.html ",
   "display": "standalone",
   "theme_color": "#3949ab",
   "background_color": "#ffffff",
