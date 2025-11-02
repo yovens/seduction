@@ -1,11 +1,12 @@
 // Simple PWA service worker with cache-first for app shell
 const CACHE = 'seduction-cache-v1';
 const APP_SHELL = [
-  '/',
+  './',
   './index.html',
   './style.css',
   './app.js',
-  '/manifest.json',
+  './offline.html',
+  './manifest.webmanifest',
   '/img/istockphoto-652380210-612x612.jpg',
   '/img/istockphoto-1251100905-612x612.jpg',
   '/img/istockphoto-2209116408-612x612.jpg',
@@ -15,7 +16,9 @@ const APP_SHELL = [
   '/img/istockphoto-839331408-612x612.jpg',
   '/img/istockphoto-665593608-612x612.jpg',
   '/img/istockphoto-1249500075-612x612.jpg',
-  '/img/istockphoto-518312983-612x612.jpg'
+  '/img/istockphoto-518312983-612x612.jpg',
+   './icons/icon-192.png',
+  './icons/icon-512.png'
 ];
 
 self.addEventListener('install', (e)=>{

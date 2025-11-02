@@ -32,3 +32,19 @@ if('serviceWorker' in navigator){
     navigator.serviceWorker.register('./service-worker.js').catch(()=>{/* ignore */});
   });
 }
+
+
+
+
+if(saveOfflineBtn) saveOfflineBtn.addEventListener('click', async ()=>{
+  if(!localSongs.length) return alert('Aucune carte à sauvegarder');
+  if(!confirm('Sauvegarder toutes les cartes visibles pour visionnage hors-ligne ?')) return;
+  for(const s of localSongs){
+    try{
+      if(s.fileObj) await saveBlob(s.name, s.fileObj);
+      else { const r = await fetch(s.url); const b = await r.blob(); await saveBlob(s.name, b); }
+      s.blobKey = s.name;
+    }catch(e){ console.warn('save fail', e); }
+  }
+  alert('Sauvegarde terminée (IndexedDB)');
+});
